@@ -34,10 +34,17 @@ const account1 = {
  console.log(account1.balance);
  console.log(account2.balance);
 
- const WithDraw = 500000;
+ const withDraw = 500000;
  
- account3.balance -= WithDraw;
- account4.balance -= WithDraw;
+ account3.balance -= withDraw;
+ account4.balance -= withDraw;
 
- console.log(account3.balance);
- console.log(account4.balance)
+;
+
+ if (account3.balance < withDraw && account4.balance < withDraw){
+   console.log(`Withdrawal denied for ${account3.name} : insufficient funds`)
+    console.log(`Withdrawal denied for ${account4.name} : insufficient funds`)
+ } else{
+       console.log(account3.balance);
+       console.log(account4.balance)
+ }
