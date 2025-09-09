@@ -15,7 +15,7 @@ const account1 = {
  const account3 = {
     name: "Kevin",
     balance:3000000,
-    currency:"USD",
+    currency:"UGX",
     type: "Checking",
  }
 
@@ -61,3 +61,22 @@ if(account2.currency == account3.currency && account2.currency === account3.curr
    console.log("Transfer failed: currency mismatch")
 
    }
+
+
+const interestRate = 0.2; //0.2 equals to 20% 
+
+if (account2.type == "Savings") {
+    const interest = account2.balance * interestRate;
+    account2.balance += interest;
+    console.log(` ${account2.name} your new balance is ${account2.balance} ${account2.currency}`);
+     console.log(` ${account1.name} your new balance is ${account1.balance} ${account1.currency}`);
+      console.log(` ${account3.name} your new balance is ${account3.balance} ${account3.currency}`)
+}  
+
+const dectedFee = 0.5; 
+if (account4.type == "Checking"){
+   const dectution = account4.balance - dectedFee;
+   account4.balance += dectution;
+   console.log(` ${account4.name} your new balance is ${account4.balance} ${account4.currency}`);
+}
+
