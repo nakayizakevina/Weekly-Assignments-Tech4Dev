@@ -80,3 +80,27 @@ if (account4.type == "Checking"){
    console.log(` ${account4.name} your new balance is ${account4.balance} ${account4.currency}`);
 }
 
+if (account3.balance > account2.balance){
+   console.log("Account3 has the highest balance")
+}
+
+//Account status check
+
+const accounts = {
+   account1:{balance:3480000} ,
+   account2:{balance:2000000} ,
+   account3:{balance:2600000} ,
+   account4:{balance:6999999.5},
+}
+
+for (let account in accounts){
+   let balance = accounts[account].balance;
+   
+   if(balance > 0){
+      console.log(`${account} is Active`);
+   } else if(account === 0){
+      console.log(`${account} is Empty`);
+   } else{
+      console.log(`${account} is Overdrawn`)
+   }
+}
