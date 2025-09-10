@@ -84,7 +84,7 @@ if (account3.balance > account2.balance){
    console.log("Account3 has the highest balance")
 }
 
-//Account status check
+//Transaction summary
 
 const accounts = {
    account1:{balance:3480000} ,
@@ -92,6 +92,19 @@ const accounts = {
    account3:{balance:2600000} ,
    account4:{balance:6999999.5},
 }
+
+let highest = null;
+let lowest = null;
+
+for (let account in accounts){
+   let balance = accounts[account].balance
+   if (highest === null || balance > highest.balance){
+    highest = { name: account, balance: balance };
+    console.log(`${account} has the hightest balance ${balance}`);
+}
+}
+
+//Account status check
 
 for (let account in accounts){
    let balance = accounts[account].balance;
@@ -104,3 +117,5 @@ for (let account in accounts){
       console.log(`${account} is Overdrawn`)
    }
 }
+
+//Transaction summary
