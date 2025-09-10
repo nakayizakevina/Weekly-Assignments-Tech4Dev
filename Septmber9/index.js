@@ -102,7 +102,22 @@ for (let account in accounts){
     highest = { name: account, balance: balance };
     console.log(`${account} has the hightest balance ${balance}`);
 }
+else if(lowest === null || balance < lowest.balance){
+   lowest = {name: account, balance: balance};
+   console.log(`${account} has the lowest balance ${balance}`);
 }
+} 
+
+// for (let account in accounts){
+//    let balance = account[accounts].balance
+//    if(lowest === null || balance < lowest.balance){
+//    lowest = {name: account, balance: balance};
+//    console.log(`${account} has the lowest balance ${balance}`);
+// }
+
+// }
+
+
 
 //Account status check
 
