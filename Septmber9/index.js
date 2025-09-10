@@ -1,3 +1,5 @@
+//Created 4 accounts as ojects 
+
 const account1 = {
     name: "Ketty",
     balance:1000000,
@@ -26,7 +28,7 @@ const account1 = {
     type: "Checking",
  }
 
-
+//Desposit money on account 1 & 2
 
  const Newdepost = 1000000;
 
@@ -36,14 +38,18 @@ const account1 = {
  console.log(account1.balance);
  console.log(account2.balance);
 
+ //Withdraw 500000 UGX from account 3 and 500000 USD from account 4
+
  const withDraw = 500000;
  
  account3.balance -= withDraw;
  account4.balance -= withDraw;
 
-;
-
- if (account3.balance < withDraw && account4.balance < withDraw){
+/* This if statement is cheching if the amount am
+ trying to withdraw from a certain account is insufficient and if it is it will show a message
+ that reads insufficient funds */
+ 
+  if (account3.balance < withDraw && account4.balance < withDraw){
    console.log(`Withdrawal denied for ${account3.name} : insufficient funds`)
     console.log(`Withdrawal denied for ${account4.name} : insufficient funds`)
  } else{
@@ -51,9 +57,13 @@ const account1 = {
        console.log(account4.balance)
  }
 
+ //Transfer money between two accounts only if they have the same currency
+
 const TransferMoney = 100000;
 account2.balance -= 100000;
 account3.balance += 100000;
+
+// This is checking if account 2 and 3 are of the same currency type and as well if they are not of the same currency type
 
 if(account2.currency == account3.currency && account2.currency === account3.currency){
    console.log(`Transfer of ${TransferMoney} done successfully to ${account3}`)
@@ -62,6 +72,7 @@ if(account2.currency == account3.currency && account2.currency === account3.curr
 
    }
 
+   //Monthly maintenance and add interest to some accounts and as well dedecting some money from soem accounts.
 
 const interestRate = 0.2; //0.2 equals to 20% 
 
@@ -84,7 +95,7 @@ if (account3.balance > account2.balance){
    console.log("Account3 has the highest balance")
 }
 
-//Transaction summary
+//Comparing which account has the highest and lowest balance and am using nested objects and for...in loop 
 
 const accounts = {
    account1:{balance:3480000} ,
@@ -108,17 +119,6 @@ else if(lowest === null || balance < lowest.balance){
 }
 } 
 
-// for (let account in accounts){
-//    let balance = account[accounts].balance
-//    if(lowest === null || balance < lowest.balance){
-//    lowest = {name: account, balance: balance};
-//    console.log(`${account} has the lowest balance ${balance}`);
-// }
-
-// }
-
-
-
 //Account status check
 
 for (let account in accounts){
@@ -134,3 +134,8 @@ for (let account in accounts){
 }
 
 //Transaction summary
+
+console.log(`Dear ${account1.name} your account balance is ${account1.balance} ${account1.currency}`);
+console.log(`Dear ${account2.name} your account balance is ${account2.balance} ${account2.currency}`);
+console.log(`Dear ${account3.name} your account balance is ${account3.balance} ${account3.currency}`);
+console.log(`Dear ${account4.name} your account balance is ${account4.balance} ${account4.currency}`);
