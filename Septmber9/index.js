@@ -139,3 +139,26 @@ console.log(`Dear ${account1.name} your account balance is ${account1.balance} $
 console.log(`Dear ${account2.name} your account balance is ${account2.balance} ${account2.currency}`);
 console.log(`Dear ${account3.name} your account balance is ${account3.balance} ${account3.currency}`);
 console.log(`Dear ${account4.name} your account balance is ${account4.balance} ${account4.currency}`);
+
+//foreign currency account
+const account5= {
+    name: "Karen",
+    balance:5000000,
+    currency:"EUR",
+    type: "Checking",
+ }
+
+const EURtransition = 100000;
+exchangeRate = 1.1;
+amountConverted = exchangeRate * EURtransition;
+
+
+if(account4.currency !== account5.currency){
+   //Convert amount to be transfered with the exchange rate
+   let amountConverted = exchangeRate * EURtransition;
+
+   //add the exchanged amount to the account
+   account5.balance -= EURtransition;
+ account4.balance += amountConverted;
+   console.log(`Transfer complete: ${EURtransition} EUR → ${amountConverted} USD`);
+}
